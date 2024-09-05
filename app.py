@@ -130,7 +130,7 @@ with st.sidebar:
 
     st.link_button(
         "Github_url",
-        "https://github.com/eunji925/APP/blob/master/app.py",
+        "https://github.com/eunji925/STREAMLIT/blob/master/app.py",
     )
 
     
@@ -249,7 +249,7 @@ with st.sidebar:
                     is_valid = False
                 st.link_button(
                     "Go to Github Repo",
-                    "https://github.com/eunji925/APP/blob/master/app.py",
+                    "https://github.com/eunji925/STREAMLIT/blob/master/app.py",
                 )
             if is_file:
                 retriever = embed_file(file)
