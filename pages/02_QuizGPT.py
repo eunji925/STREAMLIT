@@ -236,7 +236,7 @@ with st.sidebar:
 
     st.link_button(
         "Github_url",
-        "https://github.com/eunji925/STREAMLIT/blob/master/pages/01_DocumentGPT.py",
+        "https://github.com/eunji925/STREAMLIT/blob/master/pages/02_QuizGPT.py",
     )       
 
 if not docs:
