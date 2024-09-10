@@ -36,10 +36,12 @@ if not api_key:
             API key를 입력하고 input box 가 나타나면 Cloudflare 에 대한 질문을 입력하세요.
         """
     )
-else:
-        
+else:    
     llm = ChatOpenAI(
+        openai_api_key=api_key,
         temperature=0.1,
+        model="gpt-4o-mini",
+        streaming=True,
     )
 
 
