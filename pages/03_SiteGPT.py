@@ -35,7 +35,7 @@ with st.sidebar:
         is_valid = check_api_key(api_key)
         if is_valid:
             st.write("Valid OpenAI API Key")
-            #key = api_key
+            key = api_key
 
         else:
             st.write("Invalid OpenAI API Key")
