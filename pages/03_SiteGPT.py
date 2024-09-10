@@ -39,9 +39,9 @@ if not api_key:
 else:
         
     llm = ChatOpenAI(
-        api_key=api_key,
+        openai_api_key=api_key,  # 수정된 부분
         temperature=0.1,
-        model="gpt-4o-mini",
+        model="gpt-4o-mini",  # `gpt-4o-mini`를 사용할 수 있는지 확인 필요
     )
 
 
