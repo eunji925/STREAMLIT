@@ -58,7 +58,7 @@ else:
     llm = ChatOpenAI(
     openai_api_key=api_key,  # 유효한 OpenAI API 키 사용
     temperature=0.1,
-    model="gpt-4",  # gpt-4o-mini가 아니라면 gpt-4로 변경
+    model="gpt-4o-mini",  # gpt-4o-mini가 아니라면 gpt-4로 변경
     streaming=True,  # 스트리밍 활성화
     callbacks=[StreamingStdOutCallbackHandler()]  # 스트리밍 콜백 설정
     )
