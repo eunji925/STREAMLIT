@@ -6,6 +6,7 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 import streamlit as st
+import openai
 
 st.set_page_config(
     page_title="SiteGPT",
@@ -14,6 +15,13 @@ st.set_page_config(
 
 st.title("SiteGPT")
 
+def check_api_key(api_key):
+    try:
+        openai.api_key = api_key
+        openai.Model.list()
+        return True
+    except openai.error.AuthenticationError:
+        return False
 
 with st.sidebar:
     docs = None
@@ -22,15 +30,23 @@ with st.sidebar:
         label="Enter your openAI API-KEY",
         type='password',
     )
+    key = False
     if api_key:
-        st.success('Entered API-KEY!!')
+        is_valid = check_api_key(api_key)
+        if is_valid:
+            st.write("Valid OpenAI API Key")
+            #key = api_key
+
+        else:
+            st.write("Invalid OpenAI API Key")
+            st.write("Please Enter Valid API Key")
         
     st.link_button(
         "Github_url",
         "https://github.com/eunji925/STREAMLIT/blob/master/pages/03_SiteGPT.py",
     ) 
 
-if not api_key:
+if not key:
     st.markdown(
         """
             API key를 입력하고 input box 가 나타나면 Cloudflare 에 대한 질문을 입력하세요.
@@ -38,7 +54,7 @@ if not api_key:
     )
 else:    
     llm = ChatOpenAI(
-        openai_api_key=api_key,
+        openai_api_key=key,
         temperature=0.1,
         model="gpt-4o-mini",
         streaming=True,
