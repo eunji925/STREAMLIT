@@ -27,7 +27,7 @@ with st.sidebar:
         
     st.link_button(
         "Github_url",
-        "https://github.com/eunji925/STREAMLIT/blob/master/pages/02_QuizGPT.py",
+        "https://github.com/eunji925/STREAMLIT/blob/master/pages/03_SiteGPT.py",
     ) 
 
 if not api_key:
