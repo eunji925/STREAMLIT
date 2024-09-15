@@ -22,10 +22,9 @@ st.markdown(
 
 # 사이드바에서 API 키를 입력받습니다.
 with st.sidebar:
-    st.markdown(
-        """
-        [GitHub Repository](https://github.com/paqj/vs-gpt-openai-assistants)
-        """
+    st.link_button(
+        "Github_url",
+        "https://github.com/eunji925/STREAMLIT/blob/master/pages/03_SiteGPT.py",
     )
     api_key = st.text_input("Enter your OpenAI API key", type="password")
     if api_key:
