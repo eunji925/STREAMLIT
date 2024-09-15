@@ -24,7 +24,7 @@ st.markdown(
 with st.sidebar:
     st.link_button(
         "Github_url",
-        "https://github.com/eunji925/STREAMLIT/blob/master/pages/03_SiteGPT.py",
+        "https://github.com/eunji925/STREAMLIT/blob/master/pages/04_Assistant.py",
     )
     api_key = st.text_input("Enter your OpenAI API key", type="password")
     if api_key:
